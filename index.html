@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>My Music Web</title>
+
+<style>
+
+body{
+background:#121212;
+color:white;
+font-family:sans-serif;
+margin:0;
+}
+
+.header{
+font-size:28px;
+padding:20px;
+}
+
+.song{
+padding:15px;
+border-bottom:1px solid #333;
+cursor:pointer;
+}
+
+.song:hover{
+background:#1e1e1e;
+}
+
+.player{
+position:fixed;
+bottom:0;
+width:100%;
+background:#181818;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+button{
+background:#1db954;
+border:none;
+padding:10px 20px;
+border-radius:20px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+My Music
+</div>
+
+<div class="song" onclick="playSong('lagu1.mp3','Lagu Santai')">
+Lagu Santai
+</div>
+
+<div class="song" onclick="playSong('lagu2.mp3','Lagu Galau')">
+Lagu Galau
+</div>
+
+<div class="song" onclick="playSong('lagu3.mp3','Lagu Malam')">
+Lagu Malam
+</div>
+
+<div class="player">
+
+<div id="judul">
+Pilih lagu
+</div>
+
+<div>
+
+<button onclick="play()">Play</button>
+<button onclick="pause()">Pause</button>
+
+</div>
+
+</div>
+
+<script>
+
+let audio = new Audio()
+
+function playSong(file,judul){
+audio.src=file
+document.getElementById("judul").innerText=judul
+audio.play()
+}
+
+function play(){
+audio.play()
+}
+
+function pause(){
+audio.pause()
+}
+
+</script>
+
+</body>
+</html>
